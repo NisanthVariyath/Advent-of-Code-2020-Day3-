@@ -19,7 +19,7 @@ public class TobogganTrajectoryPartTwo {
 		int indexType2 = 0;
 		int indexType3 = 0;
 		int indexType4 = 0;
-		int indexType5 = 0;
+		int indexType5 = -1;
 
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("src\\io\\zerotomastery\\day3\\input.txt"));
@@ -27,7 +27,6 @@ public class TobogganTrajectoryPartTwo {
 			while ((line = br.readLine()) != null) {
 
 				recordString = "";
-				counter++;
 
 				// pattern repeats to the right
 				for (int j = 0; j <= counter; j++) {
@@ -66,9 +65,6 @@ public class TobogganTrajectoryPartTwo {
 
 					indexType5 += 1;
 
-					// System.out.println("counter " + counter +" index =" + indexType5 + " char =
-					// "+ recordString.charAt(indexType5));
-
 					if (String.valueOf(recordString.charAt(indexType5)).equals("#")) {
 						numberOfTreesType5++;
 
@@ -80,7 +76,7 @@ public class TobogganTrajectoryPartTwo {
 				indexType2 += 3;
 				indexType3 += 5;
 				indexType4 += 7;
-
+				counter++;
 			}
 			br.close();
 			System.out.println(" Number of trees Slop Type1 = " + numberOfTreesType1);
